@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vicky | CARB Tester</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      background: linear-gradient(to right, #141E30, #243B55);
+      color: #fff;
+    }
+
+    .parallax-container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+
+    .content {
+      text-align: center;
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    .email {
+      font-weight: bold;
+      color: #61dafb;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax-container" id="parallax">
+    <div class="content" id="content">
+      <h1>Vicky</h1>
+      <h2>Credential California Approved CARB Tester</h2>
+      <p>Email: <span class="email">jadhavanuj85@gmail.com</span></p>
+    </div>
+  </div>
+  <footer>© 2025 Vicky. All rights reserved.</footer>
+
+  <script>
+    const content = document.getElementById('content');
+    document.addEventListener('mousemove', (e) => {
+      const x = (window.innerWidth / 2 - e.clientX) / 25;
+      const y = (window.innerHeight / 2 - e.clientY) / 25;
+      content.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+  </script>
+</body>
+</html>
