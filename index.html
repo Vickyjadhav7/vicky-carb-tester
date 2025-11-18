@@ -2,88 +2,784 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vicky | CARB Tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="V.S Silver House crafts bespoke silverware, ornaments, and corporate gifting collections with heritage artistry and modern precision." />
+  <title>V.S Silver House | Bespoke Silverware & Heritage Craft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --deep-night: #050816;
+      --midnight: #0b1124;
+      --indigo: #5d5fee;
+      --aqua: #4cd4d4;
+      --silver: #f2f5f9;
+      --muted: rgba(242, 245, 249, 0.72);
+      --card-bg: rgba(11, 17, 36, 0.8);
+      --border: rgba(255, 255, 255, 0.12);
+      --gradient: linear-gradient(135deg, #6b64f7 0%, #4cd4d4 100%);
+      --radius-xl: 26px;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden;
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: linear-gradient(to right, #141E30, #243B55);
-      color: #fff;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, rgba(92, 88, 247, 0.2), transparent 55%), #030616;
+      color: var(--silver);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    .parallax-container {
-      height: 100vh;
+    .background-texture {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 35%),
+        radial-gradient(circle at 80% 0%, rgba(76, 212, 212, 0.08), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(109, 99, 255, 0.1), transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      width: min(1200px, 94vw);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(3, 6, 20, 0.7);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
       display: flex;
-      justify-content: center;
       align-items: center;
-      perspective: 1000px;
+      justify-content: space-between;
+      padding: 1.25rem 0;
     }
 
-    .content {
-      text-align: center;
-      transform-style: preserve-3d;
-      transition: transform 0.1s ease;
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      letter-spacing: 0.08em;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      color: #ccc;
-      margin-bottom: 20px;
-    }
-
-    p {
+    .logo span:first-child {
       font-size: 1.1rem;
-      margin-top: 10px;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
-    .email {
-      font-weight: bold;
-      color: #61dafb;
+    .logo span:last-child {
+      font-size: 1.6rem;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--aqua);
+    }
+
+    .cta-btn {
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      color: #030616;
+      background: var(--gradient);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(93, 95, 238, 0.35);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 0.35rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--silver);
+      transition: transform 0.2s ease;
+    }
+
+    .hero {
+      padding: clamp(4rem, 10vw, 8rem) 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.7rem);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 42ch;
+      margin-bottom: 2rem;
+    }
+
+    .hero .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .ghost-btn {
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--silver);
+      cursor: pointer;
+      transition: border 0.2s ease, color 0.2s ease;
+    }
+
+    .ghost-btn:hover {
+      border-color: var(--aqua);
+      color: var(--aqua);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats div {
+      min-width: 120px;
+    }
+
+    .hero-stats strong {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--silver);
+    }
+
+    .hero-art {
+      position: relative;
+      padding: 2.5rem;
+    }
+
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      inset: 10%;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle, rgba(76, 212, 212, 0.4), transparent 60%);
+      filter: blur(60px);
+      z-index: 0;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      background: linear-gradient(145deg, rgba(30, 40, 78, 0.8), rgba(7, 11, 24, 0.9));
+      box-shadow: 0 20px 60px rgba(6, 8, 20, 0.55);
+      isolation: isolate;
+    }
+
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      color: var(--muted);
+    }
+
+    section {
+      padding: clamp(3rem, 8vw, 5.5rem) 0;
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      padding: 1.75rem;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      transition: transform 0.25s ease, border 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(92, 88, 247, 0.2), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(76, 212, 212, 0.4);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .craftsmanship {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .craftsmanship img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      filter: saturate(1.1);
+      box-shadow: 0 30px 50px rgba(5, 6, 20, 0.6);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-grid figure {
+      aspect-ratio: 4 / 3;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .gallery-grid figure::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      background: rgba(13, 17, 34, 0.75);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .gallery-grid figure span {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.1);
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-grid figure:hover span {
+      transform: scale(1.06);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      padding: 1.75rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(6, 9, 20, 0.85);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 1.2rem;
+      color: var(--muted);
+    }
+
+    .testimonial-author {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .info-card {
+      padding: 2rem;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: rgba(6, 8, 20, 0.85);
+    }
+
+    .info-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: var(--muted);
+    }
+
+    .info-card strong {
+      color: var(--silver);
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(5, 8, 20, 0.6);
+      color: var(--silver);
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-message {
+      padding: 0.85rem 1rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .form-message.success {
+      display: block;
+      border-color: rgba(76, 212, 212, 0.4);
+      color: var(--aqua);
     }
 
     footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
       text-align: center;
-      color: #aaa;
+      padding: 2rem 0 3rem;
+      color: rgba(242, 245, 249, 0.6);
       font-size: 0.9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        flex-direction: column;
+        background: rgba(5, 6, 18, 0.96);
+        border: 1px solid var(--border);
+        padding: 1.5rem;
+        border-radius: 18px;
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      nav {
+        position: relative;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="parallax-container" id="parallax">
-    <div class="content" id="content">
-      <h1>Vicky</h1>
-      <h2>Credential California Approved CARB Tester</h2>
-      <p>Email: <span class="email">jadhavanuj85@gmail.com</span></p>
+  <div class="background-texture" aria-hidden="true"></div>
+
+  <header id="siteHeader">
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <span>since 1989</span>
+          <span>V.S Silver House</span>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#craft">Craftsmanship</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Consultation</button></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-  <footer>© 2025 Vicky. All rights reserved.</footer>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Crafted brilliance</p>
+          <h1>Modern heirlooms forged in pure silver artistry.</h1>
+          <p>V.S Silver House partners with discerning families, collectors, and hospitality brands to bring bespoke silverware alive with meticulous detailing, precision hallmarking, and ethical sourcing.</p>
+          <div class="cta-group">
+            <button class="cta-btn">Explore Bespoke Work</button>
+            <button class="ghost-btn" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">View Gallery</button>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong>35+</strong>
+              <span>Years of heritage</span>
+            </div>
+            <div>
+              <strong>7,200</strong>
+              <span>Pieces commissioned</span>
+            </div>
+            <div>
+              <strong>40</strong>
+              <span>Master artisans</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-art reveal">
+          <div class="hero-card">
+            <h3>Signature Collections</h3>
+            <ul>
+              <li>• Temple silver paneling & sanctum décor</li>
+              <li>• Contemporary dinnerware & gifting sets</li>
+              <li>• Corporate insignia trophies with artisanal engraving</li>
+              <li>• Heritage restoration for palatial estates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Bespoke Silver Collections</h2>
+          <p>Designed collaboratively, refined through wax prototyping, and finished with mirror-polish or antique patina to match your narrative.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal">
+            <h3>Luxury Living</h3>
+            <p>Customised centrepieces, lighting fixtures, and divine idols finished with rhodium plating for long-term brilliance.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Gifting Suite</h3>
+            <p>Limited-edition hampers, engraved trays, and monogrammed cutlery tailored for weddings, milestones, and boardroom gestures.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Hospitality & Ritual</h3>
+            <p>Signature serveware, prasadam vessels, and ceremonial kalash sets engineered for high-frequency usage.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Corporate Honors</h3>
+            <p>Sculptural awards and insignias hand-chased to narrate brand milestones with stately presence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="craft">
+      <div class="container craftsmanship">
+        <div class="reveal">
+          <p class="eyebrow">atelier process</p>
+          <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Where old-world mastery meets modern precision.</h2>
+          <p>We employ a closed-loop atelier system—concept sketching, 3D modeling, lost-wax casting, hand chasing, and microscopic quality inspection. Every piece receives BIS hallmarking and an authenticity dossier.</p>
+          <ul style="margin-top: 1.5rem; color: var(--muted); list-style: disc; padding-left: 1.2rem;">
+            <li>Ethically sourced 92.5 sterling & 99.9 temple-grade bullion.</li>
+            <li>Laser mapping & fit checks to integrate with your interiors.</li>
+            <li>Lifetime upkeep with polish, repair, and re-plating services.</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=1200&q=80" alt="Silversmith at work" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Gallery Highlights</h2>
+          <p>Recent commissions spanning residences, temples, and boutique hotels.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="reveal" data-label="Prasadam Set">
+            <span style="background-image:url('https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=900&q=80');" aria-hidden="true"></span>
+          </figure>
+          <figure class="reveal" data-label="Heritage Idol">
+            <span style="background-image:url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80');" aria-hidden="true"></span>
+          </figure>
+          <figure class="reveal" data-label="Fine Dining">
+            <span style="background-image:url('https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=900&q=80');" aria-hidden="true"></span>
+          </figure>
+          <figure class="reveal" data-label="Temple Door">
+            <span style="background-image:url('https://images.unsplash.com/photo-1504891663526-7bd8e02a524c?auto=format&fit=crop&w=900&q=80');" aria-hidden="true"></span>
+          </figure>
+          <figure class="reveal" data-label="Corporate Trophy">
+            <span style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80');" aria-hidden="true"></span>
+          </figure>
+          <figure class="reveal" data-label="Sacred Kalash">
+            <span style="background-image:url('https://images.unsplash.com/photo-1519682577862-22b62b24e493?auto=format&fit=crop&w=900&q=80');" aria-hidden="true"></span>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Voices of Trust</h2>
+          <p>Private collectors and CXOs rely on us for a seamless, confidential experience.</p>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card reveal">
+            <p>“Their team translated our heritage motif into a custom dinner service that now anchors every state banquet.”</p>
+            <div class="testimonial-author">
+              <strong>House of Kalyani</strong>
+              <span>Jaipur</span>
+            </div>
+          </article>
+          <article class="testimonial-card reveal">
+            <p>“The award sculptures they designed feel like architecture in miniature—timeless, tactile, and authoritative.”</p>
+            <div class="testimonial-author">
+              <strong>Global Infra Summit</strong>
+              <span>Dubai</span>
+            </div>
+          </article>
+          <article class="testimonial-card reveal">
+            <p>“Their restoration of our sanctum door kept every ancestral engraving intact. Unmatched respect for craft.”</p>
+            <div class="testimonial-author">
+              <strong>Shree Mahalakshmi Temple</strong>
+              <span>Kolhapur</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Visit the Atelier</h2>
+          <p>Schedule a private consultation at our boutique studio or request a virtual design walkthrough.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="info-card reveal">
+            <ul>
+              <li><strong>Studio:</strong> 14 Residency Road, Bengaluru, India</li>
+              <li><strong>Showroom Hours:</strong> Tue – Sun, 10:30 AM – 8:30 PM IST</li>
+              <li><strong>Email:</strong> concierge@vssilverhouse.com</li>
+              <li><strong>Phone:</strong> +91 99801 77887</li>
+              <li><strong>WhatsApp:</strong> +91 94825 33990</li>
+            </ul>
+          </div>
+          <form class="reveal" id="contactForm">
+            <div>
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required />
+            </div>
+            <div>
+              <label for="service">Service Interest</label>
+              <select id="service" name="service" required>
+                <option value="">Select</option>
+                <option value="custom">Custom Commission</option>
+                <option value="restoration">Restoration & Care</option>
+                <option value="hospitality">Hospitality Program</option>
+                <option value="corporate">Corporate Gifting</option>
+              </select>
+            </div>
+            <div>
+              <label for="message">Project Notes</label>
+              <textarea id="message" name="message" placeholder="Share themes, timelines, budgets..." required></textarea>
+            </div>
+            <button type="submit" class="cta-btn">Request a Call Back</button>
+            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> V.S Silver House. Crafted with integrity in Bengaluru.
+  </footer>
 
   <script>
-    const content = document.getElementById('content');
-    document.addEventListener('mousemove', (e) => {
-      const x = (window.innerWidth / 2 - e.clientX) / 25;
-      const y = (window.innerHeight / 2 - e.clientY) / 25;
-      content.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    reveals.forEach(section => observer.observe(section));
+
+    const yearSpan = document.getElementById('year');
+    yearSpan.textContent = new Date().getFullYear();
+
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      formMessage.textContent = "Thank you. Our concierge will connect within 24 hours.";
+      formMessage.classList.add('success');
+      contactForm.reset();
     });
   </script>
 </body>
