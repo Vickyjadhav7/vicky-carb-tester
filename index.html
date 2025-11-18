@@ -2,89 +2,576 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vicky | CARB Tester</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V.S Silver House | Handcrafted Sterling Elegance</title>
+  <meta name="description" content="V.S Silver House creates bespoke silverware, decor, and heirloom pieces with meticulous craftsmanship and modern design." />
   <style>
-    /* Reset */
+    :root {
+      --bg: #090a0f;
+      --bg-soft: #131520;
+      --text: #f5f5f7;
+      --muted: #c5c7d3;
+      --accent: #c0f4ff;
+      --accent-strong: #7df3e5;
+      --gold: #f1d8a7;
+      --card: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.12);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden;
-    }
-
     body {
-      background: linear-gradient(to right, #141E30, #243B55);
-      color: #fff;
+      background: radial-gradient(circle at top, rgba(192, 244, 255, 0.08), transparent 45%), var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
     }
 
-    .parallax-container {
-      height: 100vh;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(245, 214, 170, 0.15), transparent 40%),
+                  radial-gradient(circle at 80% 10%, rgba(104, 184, 255, 0.13), transparent 35%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='640' height='640' viewBox='0 0 640 640' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-opacity='0.045'%3E%3Cpath d='M160 0v640M320 0v640M480 0v640M0 160h640M0 320h640M0 480h640' stroke='%23ffffff' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.35;
+      z-index: -1;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 12, 20, 0.85);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    nav {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 1rem 1.5rem;
       display: flex;
-      justify-content: center;
       align-items: center;
-      perspective: 1000px;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
-    .content {
-      text-align: center;
-      transform-style: preserve-3d;
-      transition: transform 0.1s ease;
+    .logo {
+      display: flex;
+      flex-direction: column;
+      letter-spacing: 0.15em;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .logo span:last-child {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-strong);
+      transform: translateY(-2px);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+      display: grid;
+      gap: 5rem;
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(192, 244, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(192, 244, 255, 0.4);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-bottom: 0.75rem;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: clamp(2.8rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
     }
 
     h2 {
-      font-size: 1.5rem;
-      color: #ccc;
-      margin-bottom: 20px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
     }
 
     p {
-      font-size: 1.1rem;
-      margin-top: 10px;
+      color: var(--muted);
     }
 
-    .email {
-      font-weight: bold;
-      color: #61dafb;
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-visual {
+      background: linear-gradient(145deg, rgba(192, 244, 255, 0.15), rgba(241, 216, 167, 0.08));
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-visual::before,
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: orbit 14s linear infinite;
+    }
+
+    .hero-visual::before {
+      width: 240px;
+      height: 240px;
+      top: 20%;
+      left: 10%;
+    }
+
+    .hero-visual::after {
+      width: 320px;
+      height: 320px;
+      top: 8%;
+      left: 24%;
+      animation-duration: 22s;
+    }
+
+    @keyframes orbit {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-copy p {
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0.85rem 1.8rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--accent-strong), var(--gold));
+      color: #032224;
+      box-shadow: 0 8px 24px rgba(56, 255, 213, 0.25);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .stat {
+      min-width: 140px;
+    }
+
+    .stat strong {
+      font-size: 2.3rem;
+      font-weight: 600;
+      display: block;
+    }
+
+    .showcase-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .showcase-card {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+    }
+
+    .tag {
+      align-self: flex-start;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .process {
+      counter-reset: step;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .process-step {
+      padding: 1.5rem;
+      border-left: 2px solid var(--border);
+      position: relative;
+    }
+
+    .process-step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      left: -48px;
+      top: 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+      color: var(--accent-strong);
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    cite {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-card {
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .contact-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card a {
+      color: var(--accent-strong);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
     }
 
     footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem 3rem;
       text-align: center;
-      color: #aaa;
-      font-size: 0.9rem;
+      background: rgba(5, 6, 10, 0.9);
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step::before {
+        left: -32px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="parallax-container" id="parallax">
-    <div class="content" id="content">
-      <h1>Vicky</h1>
-      <h2>Credential California Approved CARB Tester</h2>
-      <p>Email: <span class="email">jadhavanuj85@gmail.com</span></p>
-    </div>
-  </div>
-  <footer>© 2025 Vicky. All rights reserved.</footer>
+  <header>
+    <nav>
+      <div class="logo">
+        <span>V.S Silver House</span>
+        <span>EST. 1988</span>
+      </div>
+      <ul class="nav-links">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#atelier">Atelier</a></li>
+        <li><a href="#showcase">Collections</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#testimonials">Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Curated Sterling Since 1988</p>
+        <h1>Handcrafted silverware that turns daily rituals into heirlooms.</h1>
+        <p>
+          V.S Silver House blends heritage silversmithing with contemporary silhouettes.
+          From bespoke table settings to architectural statement pieces, every creation
+          is forged, hammered, and polished by artisans who treat metal like poetry.
+        </p>
+        <div class="cta-group">
+          <button class="btn btn-primary">Plan a Commission</button>
+          <button class="btn btn-secondary">View Signature Line</button>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>6,800+</strong>
+            <span>Pieces delivered worldwide</span>
+          </div>
+          <div class="stat">
+            <strong>12</strong>
+            <span>Master silversmiths in-house</span>
+          </div>
+          <div class="stat">
+            <strong>30 yrs</strong>
+            <span>Average heirloom lifespan</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true"></div>
+    </section>
+
+    <section id="atelier">
+      <p class="eyebrow">The Atelier</p>
+      <h2>Precision metalwork, poetic finishes.</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Architectural Tableware</h3>
+          <p>Serveware sculpted with architectural symmetry, balancing weight and elegance for tactile dining moments.</p>
+        </article>
+        <article class="card">
+          <h3>Bespoke Statement Pieces</h3>
+          <p>One-of-a-kind commissions for residential foyers, boutique hospitality, and collectors.</p>
+        </article>
+        <article class="card">
+          <h3>Heritage Restoration</h3>
+          <p>Gentle refurbishment that respects original patina while strengthening the structural integrity.</p>
+        </article>
+        <article class="card">
+          <h3>Corporate Gifting</h3>
+          <p>Limited series objects that carry your brand story—engraved, numbered, and presented in keepsake packaging.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="showcase">
+      <p class="eyebrow">Collections</p>
+      <h2>Signature stories in silver.</h2>
+      <div class="grid showcase-grid">
+        <article class="card showcase-card">
+          <span class="tag">LUMIN</span>
+          <h3>Floating Candle Basin</h3>
+          <p>Mirror-polished sterling with gauged grooves reflecting ambient light like ripples at dusk.</p>
+        </article>
+        <article class="card showcase-card">
+          <span class="tag">ATLAS</span>
+          <h3>Architectural Serve Set</h3>
+          <p>Knife, fork, and ladle engineered with counterbalanced handles for effortless plating.</p>
+        </article>
+        <article class="card showcase-card">
+          <span class="tag">ORBIT</span>
+          <h3>Sculptural Centerpiece</h3>
+          <p>Interlocking rings soldered by hand, suspended on a smoked quartz plinth.</p>
+        </article>
+        <article class="card showcase-card">
+          <span class="tag">HERITAGE</span>
+          <h3>Tea Service Revival</h3>
+          <p>Restored 1920s English set with new interior gilding and stealth insulation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="process">
+      <p class="eyebrow">Process</p>
+      <h2>From sketch to keepsake in four considered chapters.</h2>
+      <div class="process">
+        <div class="card process-step">
+          <h3>Consult</h3>
+          <p>Immersive discovery sessions to gather stories, rituals, and dimensional requirements.</p>
+        </div>
+        <div class="card process-step">
+          <h3>Design</h3>
+          <p>Hand sketches evolve into digital renderings with finish samples shipped worldwide.</p>
+        </div>
+        <div class="card process-step">
+          <h3>Forge</h3>
+          <p>Each piece is formed, hammered, and engraved by artisans who specialize in micro-detailing.</p>
+        </div>
+        <div class="card process-step">
+          <h3>Deliver</h3>
+          <p>White-glove logistics, authenticity papers, and lifetime care instructions accompany every shipment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <p class="eyebrow">Stories</p>
+      <h2>Collectables that gather memories.</h2>
+      <div class="testimonials">
+        <article class="card">
+          <blockquote>“The tea service they restored for my grandmother’s 80th feels new yet familiar. They even recreated a missing monogram.”</blockquote>
+          <cite>— Aditi Rao, Mumbai</cite>
+        </article>
+        <article class="card">
+          <blockquote>“Our hotel’s lobby sculpture has become the unofficial landmark guests selfie with. It’s kinetic and calming all at once.”</blockquote>
+          <cite>— Luca Mendoza, Madrid</cite>
+        </article>
+        <article class="card">
+          <blockquote>“They translated our brand ethos into a limited edition gifting suite that clients refuse to unwrap. That’s the magic.”</blockquote>
+          <cite>— Harper Knoll, New York</cite>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card contact-card">
+        <p class="eyebrow">Collaborate</p>
+        <h3>Ready to shape your next heirloom?</h3>
+        <p>Bookings, showings, and press inquiries are coordinated by our curator team Monday–Saturday.</p>
+        <p>
+          Email <a href="mailto:studio@vssilverhouse.com">studio@vssilverhouse.com</a><br />
+          or call +1 (415) 555-0112
+        </p>
+        <div class="cta-group" style="justify-content:center; margin-top: 1.5rem;">
+          <button class="btn btn-primary">Book a Studio Tour</button>
+          <button class="btn btn-secondary">Download Portfolio</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> V.S Silver House. Crafted ethically in Mumbai & Lisbon.
+  </footer>
 
   <script>
-    const content = document.getElementById('content');
-    document.addEventListener('mousemove', (e) => {
-      const x = (window.innerWidth / 2 - e.clientX) / 25;
-      const y = (window.innerHeight / 2 - e.clientY) / 25;
-      content.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-    });
+    const yearSpan = document.getElementById('year');
+    yearSpan.textContent = new Date().getFullYear();
+
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { threshold: 0.6 });
+
+    sections.forEach(section => section && observer.observe(section));
   </script>
 </body>
 </html>
