@@ -1,0 +1,7 @@
+# Email Automation Requirements
+# No external dependencies required - uses Python standard library only
+
+# Optional: For enhanced functionality, you can add:
+# python-dotenv>=1.0.0  # For environment variable management
+# schedule>=1.2.0       # For scheduling emails
+# pandas>=2.0.0         # For reading recipient lists from CSV/Excel
