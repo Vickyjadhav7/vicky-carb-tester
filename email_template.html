@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }}
+        .header {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }}
+        .content {{
+            background: #f9f9f9;
+            padding: 30px;
+            border: 1px solid #ddd;
+        }}
+        .button {{
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+        }}
+        .footer {{
+            background: #333;
+            color: #999;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            border-radius: 0 0 10px 10px;
+        }}
+        .highlight {{
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Hello, {{name}}!</h1>
+        <p>Welcome to Our Email Automation System</p>
+    </div>
+    
+    <div class="content">
+        <h2>Personalized Message for {{company}}</h2>
+        
+        <p>Dear {{name}},</p>
+        
+        <p>We're excited to reach out to you at <strong>{{company}}</strong>. This email was automatically generated using our Python email automation system.</p>
+        
+        <div class="highlight">
+            <strong>Special Note:</strong> This template supports dynamic variables like your name ({{name}}), company ({{company}}), and position ({{position}}).
+        </div>
+        
+        <p>Here's what our email automation can do:</p>
+        <ul>
+            <li>Send personalized emails to multiple recipients</li>
+            <li>Support HTML formatting and styling</li>
+            <li>Attach files and documents</li>
+            <li>Track email sending status</li>
+            <li>Read recipients from CSV files</li>
+        </ul>
+        
+        <center>
+            <a href="https://example.com" class="button">Learn More</a>
+        </center>
+        
+        <p>Best regards,<br>
+        <strong>The Email Automation Team</strong></p>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 Email Automation System. All rights reserved.</p>
+        <p>You're receiving this because you're awesome!</p>
+    </div>
+</body>
+</html>
