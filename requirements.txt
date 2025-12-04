@@ -1,0 +1,13 @@
+# Email Automation Requirements
+# Python 3.6+ required
+
+# Core dependencies (all included in Python standard library)
+# smtplib - included
+# email - included
+# os - included
+# json - included
+# datetime - included
+# typing - included
+
+# Optional: For advanced features
+# python-dotenv>=0.19.0  # For loading environment variables from .env file

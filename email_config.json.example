@@ -1,0 +1,9 @@
+{
+  "smtp_server": "smtp.gmail.com",
+  "smtp_port": 587,
+  "sender_email": "your_email@gmail.com",
+  "sender_password": "your_app_password",
+  "use_tls": true,
+  "default_cc": [],
+  "default_bcc": []
+}
