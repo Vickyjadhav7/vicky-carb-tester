@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegant Jewels - Premium Silver, Gold-Plated & Moissanite Jewelry</title>
+  <title>Shopping Cart - Elegant Jewels</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -16,7 +16,7 @@
         <span>Elegant Jewels</span>
       </div>
       <div class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link active">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <a href="products.html" class="nav-link">Shop</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -37,62 +37,37 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Timeless Elegance, Modern Craftsmanship</h1>
-      <p class="hero-subtitle">Discover our exquisite collection of silver, gold-plated, and moissanite jewelry</p>
-      <a href="products.html" class="btn btn-primary">Shop Now</a>
-    </div>
-    <div class="hero-overlay"></div>
-  </section>
-
-  <!-- Featured Products -->
-  <section class="section featured-products">
+  <!-- Cart Page -->
+  <section class="cart-page">
     <div class="container">
-      <h2 class="section-title">Featured Products</h2>
-      <div class="products-grid" id="featuredProducts">
-        <!-- Products will be loaded dynamically -->
+      <h1 class="page-title">Shopping Cart</h1>
+      <div class="cart-container">
+        <div class="cart-items" id="cartItems">
+          <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="shipping">$10.00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="total">$10.00</span>
+          </div>
+          <a href="checkout.html" class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</a>
+          <a href="products.html" class="btn btn-secondary btn-block">Continue Shopping</a>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- New Arrivals -->
-  <section class="section new-arrivals">
-    <div class="container">
-      <h2 class="section-title">New Arrivals</h2>
-      <div class="products-grid" id="newArrivals">
-        <!-- Products will be loaded dynamically -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Shop by Category -->
-  <section class="section shop-categories">
-    <div class="container">
-      <h2 class="section-title">Shop by Category</h2>
-      <div class="categories-grid">
-        <a href="products.html?category=silver" class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-ring"></i>
-          </div>
-          <h3>Silver Jewellery</h3>
-          <p>Exquisite silver pieces for every occasion</p>
-        </a>
-        <a href="products.html?category=gold-plated" class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-gem"></i>
-          </div>
-          <h3>Gold-Plated Jewellery</h3>
-          <p>Luxurious gold-plated collections</p>
-        </a>
-        <a href="products.html?category=moissanite" class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-sparkles"></i>
-          </div>
-          <h3>Moissanite Jewellery</h3>
-          <p>Brilliant moissanite designs</p>
-        </a>
+      <div class="empty-cart" id="emptyCart" style="display: none;">
+        <i class="fas fa-shopping-bag"></i>
+        <h2>Your cart is empty</h2>
+        <p>Add some beautiful pieces to your cart!</p>
+        <a href="products.html" class="btn btn-primary">Start Shopping</a>
       </div>
     </div>
   </section>

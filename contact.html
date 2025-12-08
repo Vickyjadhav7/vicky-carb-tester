@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegant Jewels - Premium Silver, Gold-Plated & Moissanite Jewelry</title>
+  <title>Contact Us - Elegant Jewels</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -16,10 +16,10 @@
         <span>Elegant Jewels</span>
       </div>
       <div class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link active">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <a href="products.html" class="nav-link">Shop</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
       </div>
       <div class="nav-icons">
         <div class="search-container">
@@ -37,62 +37,67 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Timeless Elegance, Modern Craftsmanship</h1>
-      <p class="hero-subtitle">Discover our exquisite collection of silver, gold-plated, and moissanite jewelry</p>
-      <a href="products.html" class="btn btn-primary">Shop Now</a>
-    </div>
-    <div class="hero-overlay"></div>
-  </section>
-
-  <!-- Featured Products -->
-  <section class="section featured-products">
+  <!-- Contact Page -->
+  <section class="contact-page">
     <div class="container">
-      <h2 class="section-title">Featured Products</h2>
-      <div class="products-grid" id="featuredProducts">
-        <!-- Products will be loaded dynamically -->
-      </div>
-    </div>
-  </section>
+      <h1 class="page-title">Get in Touch</h1>
+      <p class="page-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+      
+      <div class="contact-container">
+        <div class="contact-form-container">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="contactName">Name *</label>
+              <input type="text" id="contactName" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email *</label>
+              <input type="email" id="contactEmail" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Phone</label>
+              <input type="tel" id="contactPhone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject *</label>
+              <input type="text" id="contactSubject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message *</label>
+              <textarea id="contactMessage" name="message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
 
-  <!-- New Arrivals -->
-  <section class="section new-arrivals">
-    <div class="container">
-      <h2 class="section-title">New Arrivals</h2>
-      <div class="products-grid" id="newArrivals">
-        <!-- Products will be loaded dynamically -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Shop by Category -->
-  <section class="section shop-categories">
-    <div class="container">
-      <h2 class="section-title">Shop by Category</h2>
-      <div class="categories-grid">
-        <a href="products.html?category=silver" class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-ring"></i>
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>info@elegantjewels.com</p>
+            <p>support@elegantjewels.com</p>
           </div>
-          <h3>Silver Jewellery</h3>
-          <p>Exquisite silver pieces for every occasion</p>
-        </a>
-        <a href="products.html?category=gold-plated" class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-gem"></i>
+          <div class="info-card">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p>+1 (555) 123-4567</p>
+            <p>Mon-Fri: 9am - 6pm EST</p>
           </div>
-          <h3>Gold-Plated Jewellery</h3>
-          <p>Luxurious gold-plated collections</p>
-        </a>
-        <a href="products.html?category=moissanite" class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-sparkles"></i>
+          <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Address</h3>
+            <p>123 Jewelry Lane</p>
+            <p>New York, NY 10001</p>
           </div>
-          <h3>Moissanite Jewellery</h3>
-          <p>Brilliant moissanite designs</p>
-        </a>
+          <div class="info-card">
+            <i class="fas fa-share-alt"></i>
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
