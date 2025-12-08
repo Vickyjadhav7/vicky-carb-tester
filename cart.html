@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegant Jewels - Silver, Gold-Plated & Moissanite Jewelry</title>
+  <title>Shopping Cart - Elegant Jewels</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,7 +18,7 @@
         </a>
       </div>
       <div class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link active">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <a href="products.html" class="nav-link">Shop</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -44,62 +44,17 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Elegant Craftsmanship</h1>
-      <p class="hero-subtitle">Discover our exquisite collection of silver, gold-plated, and moissanite jewelry</p>
-      <a href="products.html" class="btn btn-primary">Shop Now</a>
-    </div>
-    <div class="hero-overlay"></div>
-  </section>
-
-  <!-- Featured Products -->
-  <section class="section featured-products">
+  <!-- Cart Section -->
+  <section class="cart-container">
     <div class="container">
-      <h2 class="section-title">Featured Products</h2>
-      <div class="products-grid" id="featuredProducts">
-        <!-- Products will be loaded dynamically -->
-      </div>
-    </div>
-  </section>
-
-  <!-- New Arrivals -->
-  <section class="section new-arrivals">
-    <div class="container">
-      <h2 class="section-title">New Arrivals</h2>
-      <div class="products-grid" id="newArrivals">
-        <!-- Products will be loaded dynamically -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Shop by Category -->
-  <section class="section shop-categories">
-    <div class="container">
-      <h2 class="section-title">Shop by Category</h2>
-      <div class="categories-grid">
-        <a href="products.html?category=silver" class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-ring"></i>
-          </div>
-          <h3>Silver Jewellery</h3>
-          <p>Exquisite silver pieces for every occasion</p>
-        </a>
-        <a href="products.html?category=gold-plated" class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-crown"></i>
-          </div>
-          <h3>Gold-Plated Jewellery</h3>
-          <p>Luxurious gold-plated collections</p>
-        </a>
-        <a href="products.html?category=moissanite" class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-gem"></i>
-          </div>
-          <h3>Moissanite Jewellery</h3>
-          <p>Brilliant moissanite pieces</p>
-        </a>
+      <h1 style="margin-bottom: 2rem; font-family: var(--font-primary); text-align: center;">Shopping Cart</h1>
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+        <div id="cartItems">
+          <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div id="cartSummary">
+          <!-- Cart summary will be loaded dynamically -->
+        </div>
       </div>
     </div>
   </section>
