@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Lumière Jewels</title>
+  <meta name="description" content="Browse our collection of premium silver, gold-plated, and moissanite jewellery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p>✨ Free Shipping on Orders Over ₹2,999 | Use Code: LUMIERE10 for 10% Off ✨</p>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="logo">
+        <a href="../index.html">
+          <span class="logo-icon">💎</span>
+          <span class="logo-text">Lumière</span>
+          <span class="logo-tagline">Jewels</span>
+        </a>
+      </div>
+
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <a href="#" class="nav-link">Silver Jewellery <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu mega-menu">
+              <div class="mega-menu-inner">
+                <div class="mega-menu-column">
+                  <h4>Kids Collection</h4>
+                  <ul>
+                    <li><a href="category.html?category=silver&subcategory=kids-kade">Kids Kade</a></li>
+                    <li><a href="category.html?category=silver&subcategory=kids-payal">Kids Payal (Anklets)</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Ladies Collection</h4>
+                  <ul>
+                    <li><a href="category.html?category=silver&subcategory=ladies-kade">Ladies Kade & Chudiyan</a></li>
+                    <li><a href="category.html?category=silver&subcategory=ladies-rings">Ladies Rings</a></li>
+                    <li><a href="category.html?category=silver&subcategory=ladies-bracelets">Ladies Bracelets</a></li>
+                    <li><a href="category.html?category=silver&subcategory=ladies-payal">Ladies Payal (Anklets)</a></li>
+                    <li><a href="category.html?category=silver&subcategory=baliyan">Baliyan (Hoops)</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Mens Collection</h4>
+                  <ul>
+                    <li><a href="category.html?category=silver&subcategory=mens-kade">Mens Kade</a></li>
+                    <li><a href="category.html?category=silver&subcategory=mens-bracelet">Mens Bracelet</a></li>
+                    <li><a href="category.html?category=silver&subcategory=mens-chains">Mens Chains</a></li>
+                    <li><a href="category.html?category=silver&subcategory=mens-rings">Mens Rings</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h4>Designer Inspired</h4>
+                  <ul>
+                    <li><a href="category.html?category=silver&subcategory=van-cleef-set">Van Cleef Set</a></li>
+                    <li><a href="category.html?category=silver&subcategory=cartier-bracelet">Gold Plated Cartier Bracelet</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="#" class="nav-link">Gold-Plated <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="category.html?category=gold-plated&subcategory=ladies-sets">Ladies Sets</a></li>
+                <li><a href="category.html?category=gold-plated&subcategory=ladies-bracelet">Ladies Bracelet</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="#" class="nav-link">Moissanite <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="category.html?category=moissanite&subcategory=cuban-chain">Cuban Chain</a></li>
+                <li><a href="category.html?category=moissanite&subcategory=cuban-bracelet">Cuban Bracelet</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="action-btn search-btn" id="searchBtn" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="action-btn wishlist-btn" aria-label="Wishlist">
+          <i class="far fa-heart"></i>
+          <span class="badge wishlist-count">0</span>
+        </button>
+        <button class="action-btn cart-btn" id="cartBtn" aria-label="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="badge cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-container">
+        <form class="search-form" id="searchForm">
+          <input type="text" placeholder="Search for products..." id="searchInput" autocomplete="off">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Shopping Bag</h3>
+      <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="subtotal-amount" id="subtotalAmount">₹0</span>
+      </div>
+      <p class="cart-note">Shipping & taxes calculated at checkout</p>
+      <a href="checkout.html" class="btn btn-primary btn-full">Checkout</a>
+      <button class="btn btn-outline btn-full" id="continueShopping">Continue Shopping</button>
+    </div>
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fas fa-shopping-bag"></i>
+      <p>Your bag is empty</p>
+      <a href="category.html" class="btn btn-primary">Start Shopping</a>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <span class="logo-text">Lumière</span>
+      <button class="close-mobile-nav" id="closeMobileNav"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mobile-nav-content">
+      <div class="mobile-accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Silver Jewellery <i class="fas fa-plus"></i>
+          </button>
+          <div class="accordion-content">
+            <a href="category.html?category=silver&subcategory=kids-kade">Kids Kade</a>
+            <a href="category.html?category=silver&subcategory=ladies-kade">Ladies Kade & Chudiyan</a>
+            <a href="category.html?category=silver&subcategory=mens-kade">Mens Kade</a>
+            <a href="category.html?category=silver&subcategory=baliyan">Baliyan (Hoops)</a>
+            <a href="category.html?category=silver&subcategory=payal">Payal (Anklets)</a>
+            <a href="category.html?category=silver&subcategory=mens-bracelet">Mens Bracelet</a>
+            <a href="category.html?category=silver&subcategory=mens-chains">Mens Chains</a>
+            <a href="category.html?category=silver&subcategory=mens-rings">Mens Rings</a>
+            <a href="category.html?category=silver&subcategory=ladies-rings">Ladies Rings</a>
+            <a href="category.html?category=silver&subcategory=ladies-bracelets">Ladies Bracelets</a>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Gold-Plated Jewellery <i class="fas fa-plus"></i>
+          </button>
+          <div class="accordion-content">
+            <a href="category.html?category=gold-plated&subcategory=ladies-sets">Ladies Sets</a>
+            <a href="category.html?category=gold-plated&subcategory=ladies-bracelet">Ladies Bracelet</a>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Moissanite Jewellery <i class="fas fa-plus"></i>
+          </button>
+          <div class="accordion-content">
+            <a href="category.html?category=moissanite&subcategory=cuban-chain">Cuban Chain</a>
+            <a href="category.html?category=moissanite&subcategory=cuban-bracelet">Cuban Bracelet</a>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="mobile-nav-social">
+        <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/1234567890" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Shop</span>
+        </div>
+        <h1 class="page-title">All Products</h1>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+      <div class="container">
+        <div class="filters-container">
+          <div class="filter-group">
+            <span class="filter-label">Sort by:</span>
+            <select class="filter-select" id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name A-Z</option>
+            </select>
+          </div>
+          <div class="filter-tags">
+            <span class="filter-tag" data-category="silver">Silver</span>
+            <span class="filter-tag" data-category="gold-plated">Gold-Plated</span>
+            <span class="filter-tag" data-category="moissanite">Moissanite</span>
+          </div>
+          <span class="results-count" id="resultsCount">0 products</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+      <div class="container">
+        <div class="products-grid" id="categoryProducts">
+          <!-- Products will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-logo">
+            <span class="logo-icon">💎</span>
+            <span class="logo-text">Lumière</span>
+          </div>
+          <p>Crafting timeless elegance since 2020. We bring you the finest silver, gold-plated, and moissanite jewellery with exceptional craftsmanship.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="category.html?category=silver">Silver Jewellery</a></li>
+            <li><a href="category.html?category=gold-plated">Gold-Plated</a></li>
+            <li><a href="category.html?category=moissanite">Moissanite</a></li>
+            <li><a href="category.html">All Products</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns & Exchange</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="contact-info">
+            <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope"></i> hello@lumierejewels.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</li>
+            <li><i class="fas fa-clock"></i> Mon-Sat: 10AM - 7PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <p>&copy; 2025 Lumière Jewels. All rights reserved.</p>
+        </div>
+        <div class="footer-bottom-right">
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-google-pay"></i>
+            <i class="fab fa-cc-paypal"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <div class="modal quick-view-modal" id="quickViewModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="closeQuickView"><i class="fas fa-times"></i></button>
+      <div class="quick-view-container" id="quickViewContainer"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span class="toast-message">Item added to cart</span>
+  </div>
+
+  <script src="../js/products.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      CategoryPage.init();
+    });
+  </script>
+</body>
+</html>
