@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Jewels - Elegant Silver, Gold & Moissanite Jewelry</title>
+    <title>About Us - Luxe Jewels</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
                     </a>
                     
                     <ul class="nav-menu">
-                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li class="dropdown">
                             <a href="products.html?category=silver">Silver Jewellery <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
@@ -73,7 +73,7 @@
                                 <li><a href="products.html?category=moissanite&type=cuban-bracelet">Cuban Bracelet</a></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html" class="active">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                     
@@ -97,83 +97,84 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Elegance Redefined</h1>
-            <p class="hero-subtitle">Discover our exquisite collection of handcrafted jewelry</p>
-            <a href="products.html" class="btn btn-primary">Shop Now</a>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Luxe Jewels</h1>
+            <p>Crafting elegance, celebrating individuality</p>
         </div>
-        <div class="hero-overlay"></div>
     </section>
 
-    <!-- Featured Categories -->
-    <section class="categories-section">
+    <!-- About Content -->
+    <section class="about-content">
         <div class="container">
-            <h2 class="section-title">Shop by Category</h2>
-            <div class="categories-grid">
-                <a href="products.html?category=silver" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-ring"></i>
-                    </div>
-                    <h3>Silver Jewellery</h3>
-                    <p>Timeless elegance in pure silver</p>
-                </a>
-                <a href="products.html?category=designer" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Designer Inspired</h3>
-                    <p>Luxury designs for every occasion</p>
-                </a>
-                <a href="products.html?category=gold-plated" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3>Gold-Plated</h3>
-                    <p>Affordable luxury that shines</p>
-                </a>
-                <a href="products.html?category=moissanite" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Moissanite</h3>
-                    <p>Brilliance that lasts forever</p>
-                </a>
+            <!-- Our Story -->
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2020, Luxe Jewels was born from a passion for creating beautiful, accessible jewelry that doesn't compromise on quality or style. We believe that everyone deserves to adorn themselves with pieces that make them feel confident and special.</p>
+                    <p>What started as a small collection of handcrafted silver pieces has grown into a comprehensive jewelry brand offering silver, gold-plated, and moissanite jewelry. Each piece is carefully designed with attention to detail and crafted with the finest materials.</p>
+                    <p>Our journey has been guided by our commitment to quality craftsmanship, ethical sourcing, and customer satisfaction. We take pride in every piece that leaves our workshop, knowing it will become part of someone's cherished moments.</p>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-gem"></i>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
-        <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            <div class="products-grid" id="featuredProducts">
-                <!-- Products will be loaded dynamically -->
+            <!-- Our Values -->
+            <div class="about-grid" style="margin-top: 60px;">
+                <div class="about-image">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="about-text">
+                    <h2>Our Values</h2>
+                    <p><strong>Quality Craftsmanship:</strong> Every piece is meticulously crafted using premium materials. Our silver is 925 sterling silver, our gold plating is thick and durable, and our moissanite stones are of the highest quality with exceptional brilliance.</p>
+                    <p><strong>Timeless Design:</strong> We create jewelry that transcends trends. Our designs are elegant, versatile, and made to be cherished for years to come.</p>
+                    <p><strong>Customer First:</strong> Your satisfaction is our priority. We stand behind every piece we create with excellent customer service and quality guarantees.</p>
+                    <p><strong>Ethical Practices:</strong> We are committed to responsible sourcing and fair labor practices throughout our supply chain.</p>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- New Arrivals -->
-    <section class="new-arrivals">
-        <div class="container">
-            <h2 class="section-title">New Arrivals</h2>
-            <div class="products-grid" id="newArrivals">
-                <!-- Products will be loaded dynamically -->
+            <!-- Why Choose Us -->
+            <div style="margin-top: 80px; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 50px;">Why Choose Luxe Jewels</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Quality Guarantee</h3>
+                        <p>All our jewelry comes with a quality guarantee. We use only the finest materials and craftsmanship.</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-image">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Fast Shipping</h3>
+                        <p>Free shipping on orders over $100. Quick processing and reliable delivery worldwide.</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-image">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h3>Easy Returns</h3>
+                        <p>Not satisfied? We offer hassle-free returns within 30 days of purchase.</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-image">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Our customer service team is always ready to assist you with any questions or concerns.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Join Our Newsletter</h2>
-                <p>Subscribe to receive updates on new arrivals and special offers</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 80px; padding: 60px 20px; background: linear-gradient(135deg, var(--accent-color), var(--primary-color)); border-radius: 15px;">
+                <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Ready to Find Your Perfect Piece?</h2>
+                <p style="color: white; font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">Explore our collection and discover jewelry that speaks to you.</p>
+                <a href="products.html" class="btn btn-primary" style="background-color: var(--dark-color);">Shop Now</a>
             </div>
         </div>
     </section>

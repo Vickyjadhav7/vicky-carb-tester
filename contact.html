@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Jewels - Elegant Silver, Gold & Moissanite Jewelry</title>
+    <title>Contact Us - Luxe Jewels</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
                     </a>
                     
                     <ul class="nav-menu">
-                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li class="dropdown">
                             <a href="products.html?category=silver">Silver Jewellery <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
@@ -74,7 +74,7 @@
                             </ul>
                         </li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
                     </ul>
                     
                     <div class="nav-actions">
@@ -97,83 +97,141 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Elegance Redefined</h1>
-            <p class="hero-subtitle">Discover our exquisite collection of handcrafted jewelry</p>
-            <a href="products.html" class="btn btn-primary">Shop Now</a>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
         </div>
-        <div class="hero-overlay"></div>
     </section>
 
-    <!-- Featured Categories -->
-    <section class="categories-section">
+    <!-- Contact Content -->
+    <section class="contact-content">
         <div class="container">
-            <h2 class="section-title">Shop by Category</h2>
-            <div class="categories-grid">
-                <a href="products.html?category=silver" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-ring"></i>
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 style="margin-bottom: 30px; font-size: 2rem;">Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Your Name *</label>
+                                <input type="text" id="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Your Email *</label>
+                                <input type="email" id="contactEmail" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <input type="text" id="contactSubject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Your Message *</label>
+                            <textarea id="contactMessage" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2 style="margin-bottom: 30px; font-size: 2rem;">Get In Touch</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px; line-height: 1.8;">
+                        Have a question about our products, shipping, or anything else? 
+                        We're here to help! Reach out to us through any of the following channels.
+                    </p>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Visit Us</h3>
+                            <p>123 Jewelry Lane<br>New York, NY 10001<br>United States</p>
+                        </div>
                     </div>
-                    <h3>Silver Jewellery</h3>
-                    <p>Timeless elegance in pure silver</p>
-                </a>
-                <a href="products.html?category=designer" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-crown"></i>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>Main: +1 (555) 123-4567<br>Support: +1 (555) 123-4568<br>Mon-Fri: 9AM - 6PM EST</p>
+                        </div>
                     </div>
-                    <h3>Designer Inspired</h3>
-                    <p>Luxury designs for every occasion</p>
-                </a>
-                <a href="products.html?category=gold-plated" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-gem"></i>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>General: info@luxejewels.com<br>Support: support@luxejewels.com<br>Orders: orders@luxejewels.com</p>
+                        </div>
                     </div>
-                    <h3>Gold-Plated</h3>
-                    <p>Affordable luxury that shines</p>
-                </a>
-                <a href="products.html?category=moissanite" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-star"></i>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM<br>Sunday: Closed</p>
+                        </div>
                     </div>
-                    <h3>Moissanite</h3>
-                    <p>Brilliance that lasts forever</p>
-                </a>
+                    
+                    <div style="margin-top: 40px;">
+                        <h3 style="margin-bottom: 15px;">Follow Us</h3>
+                        <div class="social-links" style="margin-top: 0;">
+                            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
-        <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            <div class="products-grid" id="featuredProducts">
-                <!-- Products will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- New Arrivals -->
-    <section class="new-arrivals">
-        <div class="container">
-            <h2 class="section-title">New Arrivals</h2>
-            <div class="products-grid" id="newArrivals">
-                <!-- Products will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Join Our Newsletter</h2>
-                <p>Subscribe to receive updates on new arrivals and special offers</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+            <!-- FAQ Section -->
+            <div style="margin-top: 80px;">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">Frequently Asked Questions</h2>
+                <div class="categories-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <div class="category-card" style="text-align: left; padding: 30px;">
+                        <h3 style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-shipping-fast" style="color: var(--primary-color);"></i>
+                            Shipping & Delivery
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            We offer free shipping on orders over $100. Standard shipping takes 5-7 business days. 
+                            Express shipping options are available at checkout.
+                        </p>
+                    </div>
+                    <div class="category-card" style="text-align: left; padding: 30px;">
+                        <h3 style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-undo" style="color: var(--primary-color);"></i>
+                            Returns & Exchanges
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            We accept returns within 30 days of purchase. Items must be unworn and in original 
+                            condition. Visit our Returns Policy page for more details.
+                        </p>
+                    </div>
+                    <div class="category-card" style="text-align: left; padding: 30px;">
+                        <h3 style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-gem" style="color: var(--primary-color);"></i>
+                            Product Care
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            Store jewelry in a cool, dry place. Clean with a soft cloth. Avoid contact with 
+                            water, perfumes, and chemicals to maintain its luster.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

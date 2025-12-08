@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Jewels - Elegant Silver, Gold & Moissanite Jewelry</title>
+    <title>Checkout - Luxe Jewels</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
                     </a>
                     
                     <ul class="nav-menu">
-                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li class="dropdown">
                             <a href="products.html?category=silver">Silver Jewellery <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
@@ -97,83 +97,113 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Elegance Redefined</h1>
-            <p class="hero-subtitle">Discover our exquisite collection of handcrafted jewelry</p>
-            <a href="products.html" class="btn btn-primary">Shop Now</a>
-        </div>
-        <div class="hero-overlay"></div>
-    </section>
-
-    <!-- Featured Categories -->
-    <section class="categories-section">
+    <!-- Checkout Page -->
+    <section class="checkout-page">
         <div class="container">
-            <h2 class="section-title">Shop by Category</h2>
-            <div class="categories-grid">
-                <a href="products.html?category=silver" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-ring"></i>
-                    </div>
-                    <h3>Silver Jewellery</h3>
-                    <p>Timeless elegance in pure silver</p>
-                </a>
-                <a href="products.html?category=designer" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Designer Inspired</h3>
-                    <p>Luxury designs for every occasion</p>
-                </a>
-                <a href="products.html?category=gold-plated" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3>Gold-Plated</h3>
-                    <p>Affordable luxury that shines</p>
-                </a>
-                <a href="products.html?category=moissanite" class="category-card">
-                    <div class="category-image">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Moissanite</h3>
-                    <p>Brilliance that lasts forever</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="featured-products">
-        <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            <div class="products-grid" id="featuredProducts">
-                <!-- Products will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- New Arrivals -->
-    <section class="new-arrivals">
-        <div class="container">
-            <h2 class="section-title">New Arrivals</h2>
-            <div class="products-grid" id="newArrivals">
-                <!-- Products will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Join Our Newsletter</h2>
-                <p>Subscribe to receive updates on new arrivals and special offers</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+            <h1 style="text-align: center; margin-bottom: 40px; font-size: 2.5rem;">Checkout</h1>
+            
+            <div class="checkout-grid">
+                <div class="checkout-form">
+                    <form id="checkoutForm">
+                        <!-- Billing Information -->
+                        <div class="form-section">
+                            <h2>Billing Information</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Shipping Address -->
+                        <div class="form-section">
+                            <h2>Shipping Address</h2>
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <input type="text" id="address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apartment">Apartment, Suite, etc. (Optional)</label>
+                                <input type="text" id="apartment">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <input type="text" id="state" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="zipCode">ZIP Code *</label>
+                                    <input type="text" id="zipCode" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country *</label>
+                                    <select id="country" required>
+                                        <option value="">Select Country</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="AU">Australia</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Information -->
+                        <div class="form-section">
+                            <h2>Payment Information</h2>
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number *</label>
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardName">Name on Card *</label>
+                                <input type="text" id="cardName" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date *</label>
+                                    <input type="text" id="expiry" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV *</label>
+                                    <input type="text" id="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Notes -->
+                        <div class="form-section">
+                            <h2>Additional Notes</h2>
+                            <div class="form-group">
+                                <label for="notes">Order Notes (Optional)</label>
+                                <textarea id="notes" placeholder="Special instructions for your order..."></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="order-summary">
+                    <!-- Order summary will be loaded dynamically -->
+                </div>
             </div>
         </div>
     </section>
